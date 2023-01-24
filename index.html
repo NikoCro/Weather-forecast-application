@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather appplication</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="search">
+            <input type="text" id="city" placeholder="Search Your City..">
+            <!-- Make this a selection box, so its not user input, rather its a list they can choose from -->
+            <input type="text" id="state" placeholder="State Code">
+            <button id="search-btn" class="btn">Search</button>
+            <div class="date" id="date">
+                <div class="day" id="day"></div>
+
+
+            </div>
+
+            <section class="display">
+                <div class="wrapper">
+                    <p id="temperature"></p>
+                    <p id=”title”></p>
+
+                    <p id="description"></p>
+                    <p id="humidity"></p>
+                    <p id="wind"></p>
+
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+    <script src="./assets/js/script.js">
+    </script>
+
+</body>
+
+</html>
