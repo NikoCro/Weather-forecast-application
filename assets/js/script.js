@@ -1,14 +1,14 @@
 const searchBtnEl = document.getElementById("search-btn");
 const cityInput = document.getElementById("city");
 const stateInput = document.getElementById("state");
-const cityName = document.getElementById("title");
+const city = document.getElementById("title");
 const temp = document.getElementById("temperature");
 const wind = document.getElementById("wind");
 const humidity = document.getElementById("humidity");
 const descript = document.getElementById("description");
 const apiKey = "a44b30a2ad958821dc48b2b37277f900";
-console.log(cityName);
-console.log(temp);
+// console.log(city);
+// console.log(temp);
 function getLatLong() {
   const cityName = cityInput.value;
   const stateCode = stateInput.value;
@@ -26,8 +26,8 @@ function getLatLong() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data[0]);
-      console.log(city);
+      // console.log(data[0]);
+      // console.log(city);
       city.textContent = data[0].name;
       lat = data[0].lat;
       lon = data[0].lon;
@@ -59,16 +59,17 @@ function displayDate() {
 displayDate();
 
 function getWeather() {
-  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial&exclude=minutely,hourly,alert `;
   fetch(url)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-
-      temperature.textContent = data[0].temperature;
-      console.log(data[0]);
+      temperature.textContent = data.current.temp;
+      humidity.textContent = data.current.humidity;
+      wind.textContent = data.current.wind_speed;
+      description.textContent = data.current.weather[0].description;
     });
 }
 
