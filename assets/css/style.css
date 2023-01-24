@@ -20,6 +20,7 @@ body {
     max-width: 430px;
     margin: 1em;
     justify-content: center;
+    overflow: auto;
 }
 
 .search {
@@ -37,6 +38,7 @@ body {
     display: block;
     margin-left: none;
     margin-top: 5px;
+    text-align: center;
 }
 
 
@@ -44,9 +46,18 @@ body {
     text-align: center;
     width: 400px;
     color: #16a864;
+    overflow: auto;
 }
 
-.wrapper {
+.forecast-display {
+    text-align: center;
+    width: 400px;
+    color: #16a864;
+    overflow: auto;
+    max-height: 100vh;
+}
+
+.todayWrapper {
     margin: 0 9rem;
     background-color: white;
     height: 45vh;
@@ -54,7 +65,7 @@ body {
     border-radius: 2px;
 }
 
-.wrapper h2 {
+.todayWrapper h2 {
     padding: 30px;
     text-align: center;
     background: #0548b5;
@@ -63,10 +74,71 @@ body {
 }
 
 
-.wrapper p {
+.todayWrapper p {
     margin: 20px 50px;
     margin-right: 20px;
     text-align: left;
     color: #04214c;
     font-size: 23px;
+}
+
+.forecastWrapper {
+    margin: 0 9rem;
+    background-color: white;
+    height: 45vh;
+    margin: 50px auto;
+    border-radius: 2px;
+}
+
+.forecastWrapper h2 {
+    padding: 30px;
+    text-align: center;
+    background: #0548b5;
+    color: white;
+    font-family: sans-serif;
+}
+
+
+.forecastWrapper p {
+    margin: 20px 50px;
+    margin-right: 20px;
+    text-align: left;
+    color: #04214c;
+    font-size: 23px;
+}
+
+.forecast-wrapper {
+    display: inline-block;
+}
+
+.temperature::before {
+    content: 'Temperature: '
+}
+
+.temperature::after {
+    content: '\00b0 F'
+}
+
+.humidity::before {
+    content: 'Humidity: '
+}
+
+.humidity::after {
+    content: ' %'
+}
+
+.wind::before {
+    content: 'Wind: '
+}
+
+.wind::after {
+    content: ' mph'
+}
+
+.description::before {
+    content: 'Description: '
+}
+
+.hide {
+    display: none;
 }
