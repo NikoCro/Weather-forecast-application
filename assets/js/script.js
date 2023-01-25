@@ -7,3 +7,5 @@ const wind = document.getElementById("windToday");
 const hum = document.getElementById("humidityToday");
 const descript = document.getElementById("descriptionToday");
 let currentDate = document.querySelector(".date");
+let dailyWeather = [];
+const apiKey = "a44b30a2ad958821dc48b2b37277f900";
