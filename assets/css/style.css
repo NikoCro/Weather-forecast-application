@@ -21,3 +21,20 @@ body {
     justify-content: center;
     overflow: auto;
 }
+.search {
+
+    padding-left: 20px;
+
+}
+
+.date {
+    color: #000000;
+    background: rgb(199, 166, 207);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 340px;
+    padding: 11px;
+    display: block;
+    margin-left: none;
+    margin-top: 5px;
+    text-align: center;
+}
