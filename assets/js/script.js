@@ -41,3 +41,22 @@ function getLatLong() {
     ",USA" +
     "&limit=3&appid=" +
     apiKey;
+
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      city.textContent = data[0].name;
+      localStorage.setItem("city", data[0].name);
+      lat = data[0].lat;
+      lon = data[0].lon;
+    })
+    .then(function () {
+      getWeather();
+    });
+}
+function displayDate() {
+  let date = dayjs().format("dddd, MMMM D, YYYY");
+  currentDate.textContent = date;
+}
