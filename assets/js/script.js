@@ -80,8 +80,9 @@ function getWeather() {
       forecast(dailyWeather);
     });
 }
-
 function forecast(daily) {
+  let section = document.getElementById("forecast");
+  removeChilds(section);
   for (let i = 0; i < daily.length; i++) {
     let div = document.createElement("div");
     let h2 = document.createElement("h2");
@@ -89,7 +90,6 @@ function forecast(daily) {
     let humidity = document.createElement("p");
     let windSpeed = document.createElement("p");
     let description = document.createElement("p");
-    let section = document.getElementById("forecast");
     div.classList.add("forecastWrapper");
     temperature.classList.add("temperature");
     humidity.classList.add("humidity");
@@ -107,5 +107,11 @@ function forecast(daily) {
     div.appendChild(windSpeed);
     div.appendChild(description);
     section.appendChild(div);
+  }
+}
+
+function removeChilds(parent) {
+  while (parent.lastChild) {
+    parent.removeChild(parent.lastChild);
   }
 }
